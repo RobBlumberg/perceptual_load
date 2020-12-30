@@ -25,6 +25,7 @@ os.chdir(_thisDir)
 # Store info about the experiment session
 expName = 'cartoon'  # from the Builder filename that created this script
 expInfo = {'participant': '', '': ''}
+
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -34,12 +35,6 @@ expInfo['expName'] = expName
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
 filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
 
-# An ExperimentHandler isn't essential but helps with data saving
-thisExp = data.ExperimentHandler(name=expName, version='',
-    extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/michelleblumberg/Desktop/cartoon/cartoon.py',
-    savePickle=True, saveWideText=True,
-    dataFileName=filename)
 # save a log file for detail verbose info
 logFile = logging.LogFile(filename+'.log', level=logging.EXP)
 logging.console.setLevel(logging.WARNING)  # this outputs to the screen, not a file
@@ -49,7 +44,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # Setup the Window
 win = visual.Window(
-    size=[1440, 900], fullscr=True, screen=0, 
+    size=[1440, 900], fullscr=False, screen=0, 
     winType='pyglet', allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -72,7 +67,7 @@ ConsentClock = core.Clock()
 ConsentPage = visual.ImageStim(
     win=win,
     name='ConsentPage', 
-    image=os.getcwd() + '../images/Consent.jpeg', mask=None,
+    image=_thisDir + '/../images/Consent.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(10.2, 10.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -115,7 +110,7 @@ Instructions2Clock = core.Clock()
 imgInstructions = visual.ImageStim(
     win=win,
     name='imgInstructions', 
-    image=os.getcwd() + '../images/Instructions.jpeg', mask=None,
+    image=_thisDir + '/../images/Instructions.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(11.0, 11.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -150,7 +145,7 @@ ReminderLowClock = core.Clock()
 imageReminderLow = visual.ImageStim(
     win=win,
     name='imageReminderLow', 
-    image=os.getcwd() + '../images/LowReminder.jpeg', mask=None,
+    image=_thisDir + '/../images/LowReminder.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(6.0, 4.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -162,13 +157,12 @@ ReminderHighClock = core.Clock()
 imageReminderHigh = visual.ImageStim(
     win=win,
     name='imageReminderHigh', 
-    image=os.getcwd() + '../images/HighReminder.jpeg', mask=None,
+    image=_thisDir + '/../images/HighReminder.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(6.0, 4.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
     texRes=128, interpolate=True, depth=0.0)
 ReminderHigh_Resp = keyboard.Keyboard()
-
 # Initialize components for Routine "LowLoad1"
 def item_generator(name, pos, win):
     if name == "circle_situator":
@@ -296,17 +290,11 @@ while continueRoutine:
 for thisComponent in ConsentComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('ConsentPage.started', ConsentPage.tStartRefresh)
-thisExp.addData('ConsentPage.stopped', ConsentPage.tStopRefresh)
+
 # check responses
 if ConsentResp.keys in ['', [], None]:  # No response was made
     ConsentResp.keys = None
-thisExp.addData('ConsentResp.keys',ConsentResp.keys)
-if ConsentResp.keys != None:  # we had a response
-    thisExp.addData('ConsentResp.rt', ConsentResp.rt)
-thisExp.addData('ConsentResp.started', ConsentResp.tStartRefresh)
-thisExp.addData('ConsentResp.stopped', ConsentResp.tStopRefresh)
-thisExp.nextEntry()
+
 # the Routine "Consent" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -372,8 +360,6 @@ while continueRoutine and routineTimer.getTime() > 0:
 for thisComponent in BreakComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('blankscreen.started', blankscreen.tStartRefresh)
-thisExp.addData('blankscreen.stopped', blankscreen.tStopRefresh)
 
 # ------Prepare to start Routine "Instructions1"-------
 continueRoutine = True
@@ -453,8 +439,7 @@ while continueRoutine:
 for thisComponent in Instructions1Components:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('textInstructions.started', textInstructions.tStartRefresh)
-thisExp.addData('textInstructions.stopped', textInstructions.tStopRefresh)
+        
 # the Routine "Instructions" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -520,8 +505,6 @@ while continueRoutine and routineTimer.getTime() > 0:
 for thisComponent in BreakComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('blankscreen.started', blankscreen.tStartRefresh)
-thisExp.addData('blankscreen.stopped', blankscreen.tStopRefresh)
 
 # ------Prepare to start Routine "Instructions2"-------
 continueRoutine = True
@@ -601,17 +584,11 @@ while continueRoutine:
 for thisComponent in Instructions2Components:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('imgInstructions.started', imgInstructions.tStartRefresh)
-thisExp.addData('imgInstructions.stopped', imgInstructions.tStopRefresh)
+
 # check responses
 if imgInstructionsResp.keys in ['', [], None]:  # No response was made
     imgInstructionsResp.keys = None
-thisExp.addData('imgInstructions.keys',imgInstructionsResp.keys)
-if imgInstructionsResp.keys != None:  # we had a response
-    thisExp.addData('imgInstructionsResp.rt', imgInstructionsResp.rt)
-thisExp.addData('imgInstructionsResp.started', imgInstructionsResp.tStartRefresh)
-thisExp.addData('imgInstructionsResp.stopped', imgInstructionsResp.tStopRefresh)
-thisExp.nextEntry()
+
 # the Routine "imgInstructions" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -693,8 +670,7 @@ while continueRoutine:
 for thisComponent in PracticeWarningComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-thisExp.addData('PracticeText.started', PracticeText.tStartRefresh)
-thisExp.addData('PracticeText.stopped', PracticeText.tStopRefresh)
+
 # the Routine "Instructions" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -863,7 +839,7 @@ pracresults = pd.DataFrame(
     }
 )
 
-pracresults.to_csv("pracresults.csv")
+pracresults.to_csv(f"pracresults_{expInfo['participant']}.csv")
 
 item1.setAutoDraw(False)
 item2.setAutoDraw(False)
@@ -995,7 +971,7 @@ for i in range(nblocks):
         np.arange(2, 21, 1), size=6, replace=False
     )
 
-    distractor_images = os.listdir(os.getcwd() + "../distractors")
+    distractor_images = os.listdir(_thisDir + "/../distractors")
     np.random.shuffle(distractor_images)
     d = 0
 
@@ -1012,7 +988,7 @@ for i in range(nblocks):
         distractor_image = visual.ImageStim(
             win=win,
             name='distractor', 
-            image=os.getcwd() + f'../distractors/{image}', mask=None,
+            image=_thisDir + f'/../distractors/{image}', mask=None,
             ori=0, pos=(0, 0), size=(2.0, 2.0),
             color=[1,1,1], colorSpace='rgb', opacity=1,
             flipHoriz=False, flipVert=False, units="cm",
@@ -1363,13 +1339,12 @@ results = pd.DataFrame(
     }
 )
 
-results.to_csv("results.csv")
+results.to_csv(f"results_{expInfo['participant']}.csv")
 
 # Flip one final time so any remaining win.callOnFlip() 
 # and win.timeOnFlip() tasks get executed before quitting
 win.flip()
 
 # make sure everything is closed down
-thisExp.abort()  # or data files will save again on exit
 win.close()
 core.quit()
