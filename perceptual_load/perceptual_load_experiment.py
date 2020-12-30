@@ -157,7 +157,7 @@ ReminderHighClock = core.Clock()
 imageReminderHigh = visual.ImageStim(
     win=win,
     name='imageReminderHigh', 
-    image=_thisDir + '/../images/HighReminder.jpeg', mask=None,
+    image=_thisDir + '/images/HighReminder.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(6.0, 4.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -971,7 +971,7 @@ for i in range(nblocks):
         np.arange(2, 21, 1), size=6, replace=False
     )
 
-    distractor_images = os.listdir(_thisDir + "/../distractors")
+    distractor_images = os.listdir(_thisDir + "/distractors")
     np.random.shuffle(distractor_images)
     d = 0
 
@@ -988,7 +988,7 @@ for i in range(nblocks):
         distractor_image = visual.ImageStim(
             win=win,
             name='distractor', 
-            image=_thisDir + f'/../distractors/{image}', mask=None,
+            image=_thisDir + f'/distractors/{image}', mask=None,
             ori=0, pos=(0, 0), size=(2.0, 2.0),
             color=[1,1,1], colorSpace='rgb', opacity=1,
             flipHoriz=False, flipVert=False, units="cm",
