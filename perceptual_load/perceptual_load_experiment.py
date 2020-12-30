@@ -836,7 +836,7 @@ pracresults = pd.DataFrame(
     }
 )
 
-pracresults.to_csv(os.getcwd() + f"pracresults_{expInfo['participant']}.csv")
+pracresults.to_csv(os.getcwd() + f"/pracresults_{expInfo['participant']}.csv")
 
 item1.setAutoDraw(False)
 item2.setAutoDraw(False)
