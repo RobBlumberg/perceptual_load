@@ -20,7 +20,7 @@ jobs:
     - name: checkout
       uses: actions/checkout@master
       with:
-        ref: master
+        ref: main
         fetch-depth: '0'
     - name: Bump package versions
       run: |
