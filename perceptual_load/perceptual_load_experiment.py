@@ -67,7 +67,7 @@ ConsentClock = core.Clock()
 ConsentPage = visual.ImageStim(
     win=win,
     name='ConsentPage', 
-    image=_thisDir + '/../images/Consent.jpeg', mask=None,
+    image=_thisDir + '/images/Consent.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(10.2, 10.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -110,7 +110,7 @@ Instructions2Clock = core.Clock()
 imgInstructions = visual.ImageStim(
     win=win,
     name='imgInstructions', 
-    image=_thisDir + '/../images/Instructions.jpeg', mask=None,
+    image=_thisDir + '/images/Instructions.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(11.0, 11.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -145,7 +145,7 @@ ReminderLowClock = core.Clock()
 imageReminderLow = visual.ImageStim(
     win=win,
     name='imageReminderLow', 
-    image=_thisDir + '/../images/LowReminder.jpeg', mask=None,
+    image=_thisDir + '/images/LowReminder.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(6.0, 4.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
