@@ -72,7 +72,7 @@ ConsentClock = core.Clock()
 ConsentPage = visual.ImageStim(
     win=win,
     name='ConsentPage', 
-    image='images/Consent.jpeg', mask=None,
+    image='../images/Consent.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(10.2, 10.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -115,7 +115,7 @@ Instructions2Clock = core.Clock()
 imgInstructions = visual.ImageStim(
     win=win,
     name='imgInstructions', 
-    image='images/Instructions.jpeg', mask=None,
+    image='../images/Instructions.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(11.0, 11.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -150,7 +150,7 @@ ReminderLowClock = core.Clock()
 imageReminderLow = visual.ImageStim(
     win=win,
     name='imageReminderLow', 
-    image='Images/LowReminder.jpeg', mask=None,
+    image='../Images/LowReminder.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(6.0, 4.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -162,7 +162,7 @@ ReminderHighClock = core.Clock()
 imageReminderHigh = visual.ImageStim(
     win=win,
     name='imageReminderHigh', 
-    image='Images/HighReminder.jpeg', mask=None,
+    image='../Images/HighReminder.jpeg', mask=None,
     ori=0, pos=(0, 0), size=(6.0, 4.0),
     color=[1,1,1], colorSpace='rgb', opacity=1,
     flipHoriz=False, flipVert=False,  units="cm",
@@ -995,7 +995,7 @@ for i in range(nblocks):
         np.arange(2, 21, 1), size=6, replace=False
     )
 
-    distractor_images = os.listdir("distractors")
+    distractor_images = os.listdir("../distractors")
     np.random.shuffle(distractor_images)
     d = 0
 
@@ -1012,7 +1012,7 @@ for i in range(nblocks):
         distractor_image = visual.ImageStim(
             win=win,
             name='distractor', 
-            image=f'distractors/{image}', mask=None,
+            image=f'../distractors/{image}', mask=None,
             ori=0, pos=(0, 0), size=(2.0, 2.0),
             color=[1,1,1], colorSpace='rgb', opacity=1,
             flipHoriz=False, flipVert=False, units="cm",
