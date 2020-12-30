@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.7"
 pandas = "^1.0.3"
 numpy = "^1.18.2"
+PsychoPy = "^2020.2.10"
 
 [tool.poetry.dev-dependencies]
 python-semantic-release = "^5.0.2"
