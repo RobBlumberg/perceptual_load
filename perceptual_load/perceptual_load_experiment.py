@@ -44,7 +44,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # Setup the Window
 win = visual.Window(
-    size=[1440, 900], fullscr=False, screen=0, 
+    size=[1440, 900], fullscr=True, screen=0, 
     winType='pyglet', allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[-1.000,-1.000,-1.000], colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -839,7 +839,7 @@ pracresults = pd.DataFrame(
     }
 )
 
-pracresults.to_csv(f"pracresults_{expInfo['participant']}.csv")
+pracresults.to_csv(os.getcwd() + f"pracresults_{expInfo['participant']}.csv")
 
 item1.setAutoDraw(False)
 item2.setAutoDraw(False)
@@ -1339,7 +1339,7 @@ results = pd.DataFrame(
     }
 )
 
-results.to_csv(f"results_{expInfo['participant']}.csv")
+results.to_csv(os.getcwd() + f"/results_{expInfo['participant']}.csv")
 
 # Flip one final time so any remaining win.callOnFlip() 
 # and win.timeOnFlip() tasks get executed before quitting
