@@ -11,3 +11,6 @@ python get-pip.py
 ```
 pip install git+https://github.com/RobBlumberg/perceptual_load
 ```
+```
+python -m perceptual_load.perceptual_load_experiment
+```
