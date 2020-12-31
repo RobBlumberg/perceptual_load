@@ -22,8 +22,8 @@ brew install python3
 
 ### 2. Install and Run Perceptual Load Experiment
 ```
-pip install perceptual-load
+pip3 install perceptual-load
 ```
 ```
-python -m perceptual_load.perceptual_load_experiment
+python3 -m perceptual_load.perceptual_load_experiment
 ```
