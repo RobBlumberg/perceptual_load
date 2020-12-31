@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "perceptual_load"
-version = "0.0.4"
+version = "0.0.5"
 description = ""
 authors = ["RobBlumberg <robertblumberg97@gmail.com>"]
 license = "MIT"
