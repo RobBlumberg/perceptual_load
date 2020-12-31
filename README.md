@@ -1,10 +1,28 @@
 # Perceptual Load Experiment
 
-## Running Experiment on Participants
+## Running Experiment
 
+### 1. Installing python3 on macOS
+- See [here](https://installpython3.com/mac/) for additional details
 
+#### 1.1 Install XCode
 ```
-pip install git+https://github.com/RobBlumberg/perceptual_load
+xcode-select --install
+```
+
+#### 1.2 Install Homebrew
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+#### 1.3 Install python3
+```
+brew install python3
+```
+
+### 2. Install and Run Perceptual Load Experiment
+```
+pip install perceptual-load
 ```
 ```
 python -m perceptual_load.perceptual_load_experiment
