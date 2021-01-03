@@ -25,5 +25,8 @@ brew install python3
 pip3 install perceptual-load
 ```
 ```
+pip3 install pyqt5
+```
+```
 python3 -m perceptual_load.perceptual_load_experiment
 ```
