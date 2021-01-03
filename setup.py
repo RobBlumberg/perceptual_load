@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="perceptual-load", # Replace with your own username
-    version="0.0.8",
+    version="0.0.9",
     author="Rob Blumberg",
     description="Perceptual Load Experiment",
     packages=setuptools.find_packages(),
