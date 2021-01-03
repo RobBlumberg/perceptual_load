@@ -84,7 +84,7 @@ blankscreen = visual.TextStim(win=win, name='blankscreen',
 # Initialize components for Routine "Instructions1"
 Instructions1Clock = core.Clock()
 textInstructions = visual.TextStim(win=win, name='textInstructions',
-    text='Task Instructions\n\nIn this experiment, you will switch back and forth between 2 games.\n\n In the first game, press X for letters c & o and N for letters i & l.\n\nIn the second game, press X for letters d & p and N for letters q & b.\n\nYou will switch between both games 4 times.\n\nYou will be reminded of the instructions each time you switch!\n\n The task takes less than 20 minutes! \n\n Press SPACEBAR for more instructions!',
+    text='Task Instructions\n\nIn this experiment, you will switch back and forth between 2 games.\n\n In the first game, press X for letters c & o and N for letters i & l.\n\nIn the second game, press X for letters d & b and N for letters q & p.\n\nYou will switch between both games 4 times.\n\nYou will be reminded of the instructions each time you switch!\n\n The task takes less than 20 minutes! \n\n Press SPACEBAR for more instructions!',
     font='Arial',
     pos=(0, 0), height=0.5, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -127,7 +127,7 @@ blankscreen = visual.TextStim(win=win, name='blankscreen',
 # Initialize components for Routine "PracticeWarning"
 PracticeWarningClock = core.Clock()
 PracticeText = visual.TextStim(win=win, name='PracticeText',
-    text='PRESS SPACEBAR TO BEGIN PRACTICE!\n\n Remember: \n\n Game 1: Press X for c & o and N for i & l\n\n Game 2: Press X for d & p and N for q & b',
+    text='PRESS SPACEBAR TO BEGIN PRACTICE!\n\n Remember: \n\n Game 1: Press X for c & o and N for i & l\n\n Game 2: Press X for d & b and N for q & p',
     font='Arial',
     pos=(0, 0), height=0.5, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -937,8 +937,8 @@ routineTimer.reset()
 # ----------------------------------RUN EXPERIMENT TRIALS---------------------------------
 
 ######################## EXPERIMENT PARAMETERS ########################
-ntrials = 2
-nblocks = 2
+ntrials = 20
+nblocks = 8
 #######################################################################
 responses_list = []
 reaction_list = [] 
@@ -1115,7 +1115,7 @@ for i in range(nblocks):
         if tr+1 in distractor_trials:
             distractor_pos_list.append(distractor_step[0])
         else:
-            distractor_pos_list.append("None")
+            distractor_pos_list.append("FALSE")
 
         if i % 2 == 0:
             correct_response = [
