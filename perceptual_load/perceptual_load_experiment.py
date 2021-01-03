@@ -938,7 +938,7 @@ routineTimer.reset()
 
 ######################## EXPERIMENT PARAMETERS ########################
 ntrials = 20
-nblocks = 8
+nblocks = 2
 #######################################################################
 responses_list = []
 reaction_list = [] 
@@ -971,6 +971,8 @@ for i in range(nblocks):
     distractor_images = os.listdir(_thisDir + "/distractors")
     np.random.shuffle(distractor_images)
     d = 0
+    distractor_step_list = [3, 4, 5, 6, 7, 8]
+    np.random.shuffle(distractor_step_list)
 
     for tr in range(ntrials):
         
@@ -991,7 +993,7 @@ for i in range(nblocks):
             flipHoriz=False, flipVert=False, units="cm",
             texRes=128, interpolate=True, depth=0.0
         )
-        distractor_step = np.random.choice(np.arange(3, 9, 1), size=1)
+        distractor_step = [distractor_step_list[d]]
 
         # ------Prepare to start Routine "LowLoad1"-------
         continueRoutine = True
@@ -1083,7 +1085,7 @@ for i in range(nblocks):
             item12.setAutoDraw(True)
             item13.setAutoDraw(True)
             
-            if tr+1 in distractor_trials and (len(item1_resp.keys) == distractor_step):
+            if tr+1 in distractor_trials and (len(item1_resp.keys) == distractor_step[0]):
                 distractor_image.setAutoDraw(True)
             
             # --------------------------------------------------------------------- 
